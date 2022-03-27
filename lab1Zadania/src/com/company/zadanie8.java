@@ -4,7 +4,7 @@ package com.company;
 
 public class zadanie8 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws JsonProcessingException {
 
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -14,5 +14,25 @@ public class zadanie8 {
 
         System.out.println(userObject.getName());
         System.out.println(userObject.getAge());
+    }
+    public static class User{
+        private String name;
+        private int age;
+
+        public User(String name,int age)
+        {
+            this.age=age;
+            this.name=name;
+        }
+        public User(){}
+
+        public String getName()
+        {
+            return name;
+        }
+        public String getAge()
+        {
+            return name;
+        }
     }
 }

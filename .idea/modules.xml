@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ProgramowanieBackend.iml" filepath="$PROJECT_DIR$/ProgramowanieBackend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/demo/demo.iml" filepath="$PROJECT_DIR$/demo/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab1Zadania/maven.iml" filepath="$PROJECT_DIR$/lab1Zadania/maven.iml" />
     </modules>
   </component>
 </project>
