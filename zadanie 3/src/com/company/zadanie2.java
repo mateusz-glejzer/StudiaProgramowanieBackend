@@ -1,6 +1,10 @@
 package com.company;
 
+import java.io.*;
+import java.util.Scanner;
+
 public class zadanie2 {
+<<<<<<< HEAD
     public static void main(String[] args) {
    /* int[] CRC_TABLE = int[256];
 
@@ -27,6 +31,24 @@ public class zadanie2 {
 
         System.out.println(crc32('This is example text ...'));  // 3473739588*/
     }
+=======
+
+        public static void main(String[] args) throws IOException {
+
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("type data to save");
+            String text = scanner.nextLine();
+            File file = new File("C:\\Users\\papie\\Desktop");
+            try (FileOutputStream fos = new FileOutputStream(file)) {
+
+
+                byte[] mybytes = text.getBytes();
+
+                fos.write(mybytes);
+            }
+        }
+
+>>>>>>> 5ec5e7395f0fdd2025b2ae6000a3fa056d2d1ba5
 }
 /*
 * const CRC_TABLE = Array(256);
