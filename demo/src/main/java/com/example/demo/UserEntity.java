@@ -1,12 +1,12 @@
 package com.example.demo;
 
 public class UserEntity {
-    private Long id;
     private String name;
+    private Integer age;
 
-    public UserEntity(Long id, String name)
+    public UserEntity(String name, Integer age)
     {
-        this.id=id;
+        this.age=age;
         this.name=name;
     }
 }
