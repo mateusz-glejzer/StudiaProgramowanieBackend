@@ -1,7 +1,10 @@
 package com.example.demo;
 
+import com.google.gson.Gson;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -9,6 +12,7 @@ import java.util.*;
 
 @Controller
 public class HomeController {
+    Gson gson = new Gson();
 
     private Map<Integer,UserEntity> users = new HashMap<Integer,UserEntity>();
     int numberOfUsers;
@@ -38,23 +42,23 @@ public class HomeController {
     }
     @RequestMapping("/getUser")
     @ResponseBody
-    public UserEntity getUser(@RequestParam Integer key)
+    public String getUser(@RequestParam Integer key)
     {
 
-        return users.get(key);
+        return gson.toJson(users.get(key));
     }
-    @RequestMapping("/deleteUsers")
+    @RequestMapping(value="/getUsers",method = RequestMethod.GET,produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseBody
-    public Collection<UserEntity> deleteUsers()
+    public String getUsers()
     {
-        return users.values();
+        return gson.toJson(users.values());
     }
     @RequestMapping("/deleteUser")
     @ResponseBody
-    public UserEntity deleteUser(@RequestParam Integer key)
+    public String deleteUser(@RequestParam Integer key)
     {
 
-        return users.remove(key);
+        return gson.toJson(users.remove(key))+"was deleted";
     }
 
     @RequestMapping("/zip")
