@@ -34,9 +34,9 @@ public class HomeController {
 
     @RequestMapping("/addUser")
     @ResponseBody
-    public String user(@RequestParam String name, @RequestParam Integer age)
+    public String user(@RequestParam Integer id,@RequestParam String name, @RequestParam Integer age)
     {
-        users.put(numberOfUsers,new UserEntity(name,age));
+        users.put(numberOfUsers,new UserEntity(name,age,id));
         numberOfUsers++;
         return "added user:"+name;
     }
@@ -65,4 +65,5 @@ public class HomeController {
     public String zip() {return "zip.zip";}
     @RequestMapping("/txt")
     public String tekst() {return "tekst.txt";}
+
 }
